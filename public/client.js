@@ -26,7 +26,7 @@
         str="<p>"+k+")"+rep.comment+"<p>";
         strx="<input type='hidden' name='rname' value="+rep.comment+">";
         stry="<input type='submit' value='delete'>"
-var str1="<form action='delrep' method='get'>"+str+"<input name='tid' type='hidden' value="+ele.id+">"+strx+"<label for='reppassword'>Password:</label>'"+ "<input name='reppassword' type='text'>"+stry+"</form>";
+var str1="<form action='delrep' method='get'>"+str+"<input name='tid' type='hidden' value="+ele.id+">"+strx+"<label for='reppassword'>Password:</label>"+ "<input name='reppassword' type='text'>"+stry+"</form>";
   console.log("what up")
         arr.push(str1);
       
@@ -39,11 +39,11 @@ var str1="<form action='delrep' method='get'>"+str+"<input name='tid' type='hidd
         
         var fstr="<input type='hidden' name='tid' value="+ele.id+">";
         var sdstr="<form action='addrep' method='post'><textarea name='reply' placeholder='reply....'></textarea>"+fstr+"<input type='submit' value='reply'></form>'"
-        var arry=[ "<div id='booker'>","<form action='delthread' method='post'>",fstr,"<input name='reppassword' type='text'>","<input type='submit' value='delete'></form>",
+        var arry=[ "<div id='booker'>",
            "<h3>Id:",ele.id,"</h3>",
            "<h3>Thread:",
-           ele.content,"</h3>",sdstr,
-           "<h3>Replies:",
+           ele.content,"</h3>","<form action='delthread' method='post'>",fstr,"<label for='thrpassword'>Password:</label>","<input name='thrpassword' type='text'>","<input type='submit' value='delete thread'></form>",
+          "<br>",sdstr, "<h3>Replies:",
            "</h3>",kstr,
             "</div>"
       ];
