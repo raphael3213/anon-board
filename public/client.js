@@ -12,7 +12,7 @@
       data.forEach(function(ele)
                    {
         var str="";
-        var str1="";
+        var str1="<form action='delrep' method='get'><input name='tid' type='hidden' value="+ele.id+"><label for='reppassword>Password:</label>'"+ "<input name='reppassword' type='text'>"+"</form>";
         var arr=[];
         arr.push("<div id='repl'>")
         var k=0;      
@@ -20,6 +20,7 @@
       
       k=ind+1;
         str="<p>"+ind+")"+rep.comment+"<p>";
+        
         
       
       })
