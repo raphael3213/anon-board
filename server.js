@@ -40,7 +40,7 @@ app.post('/postthread',function(req,res,next){
   var newThread=new threads;
   newThread.content=content;
   newThread.password=password;
-  newThread.id=Math.round(Math.random()*10000000);z
+  newThread.id=Math.round(Math.random()*10000000);
   newThread.save(function(err){
                  
                  if(err){console.log(err)}
