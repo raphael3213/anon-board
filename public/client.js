@@ -8,12 +8,13 @@
     url:'/all',
     datatype:'json',
     success: function(data){
-   
+   var arrx=[];
       data.forEach(function(ele)
                    {
         var str="";
         var strx="";
         var stry="";
+        
         var arr=[];
         var mstr="";
         var smstr="";
@@ -30,7 +31,9 @@ var str1="<form action='delrep' method='get'>"+str+"<input name='tid' type='hidd
         arr.push(str1);
       
       })
-        mstr=arr.join('');
+        
+        if
+        //mstr=arr.join('');
         var fstr="<input type='hidden' name='tid' value="+ele.id+">";
         var sdstr="<form action='addrep' method='post'><textarea name='reply' placeholder='reply....'></textarea>"+fstr+"<input type='submit'></form>'"
         var arry=[ "<div id='booker'>",
@@ -38,18 +41,18 @@ var str1="<form action='delrep' method='get'>"+str+"<input name='tid' type='hidd
            "<h3>Thread:",
            ele.content,"</h3>",sdstr,
            "<h3>Replies:",
-           "</h3>",mstr,
+           "</h3>","",
             "</div>"
       ];
         
-      $("#threads").html(arrx.join(''));
+     arrx.push(arry.join(''));
       }
                   
                   
                   )
     
     
-    
+     $("#threads").html(arrx.join(''));
     
     console.log(data);
     
