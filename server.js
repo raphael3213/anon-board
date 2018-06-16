@@ -6,7 +6,8 @@ var express = require('express');
 var app = express();
 var mongoose=require('mongoose');
 var bp=require('body-parser');
-app.use(bp.json)
+app.use(bp.json());
+app.use(bp.urlencoded({extended:false}));
 
 mongoose.connect(process.env.SECRET,function(err){
 
@@ -32,12 +33,13 @@ app.post('/postthread',function(req,res,next){
 
   var content=req.body.content;
   var password=req.body.password;
-  conso
-  if(content==undefined)
+  console.log(req.body);
+  if(content=='')
   {
   res.json({error:"No content specified"});
   
   }
+  
 
 })
 
