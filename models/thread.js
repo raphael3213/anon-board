@@ -6,8 +6,10 @@ content:{
 
 type:String,default:"new thread"
 },
-  password
+  password:String,
+  replies:Array
 
 
 
 })
+module.exports=mongoose.model('thread',threadSchema);
