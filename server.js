@@ -45,7 +45,7 @@ app.post('/postthread',function(req,res,next){
                  
                  if(err){console.log(err)}
   
-  
+  res.redirect('/');
                  
                  })
 
