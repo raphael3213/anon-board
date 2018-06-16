@@ -2,6 +2,7 @@
 // where your node app starts
 
 // init project
+var threads=require('./models/thread')
 var express = require('express');
 var app = express();
 var mongoose=require('mongoose');
@@ -39,7 +40,17 @@ app.post('/postthread',function(req,res,next){
   res.json({error:"No content specified"});
   
   }
+  var newThread=new threads;
+  newThread.content=content;
+  newThread.password=password;
   
+  newThread.save(function(err){
+                 
+                 if(err){console.log(err)}
+  
+  
+                 
+                 })
 
 })
 
