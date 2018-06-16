@@ -17,10 +17,7 @@ if(err){console.log(err)}
   console.log("mongoose connected")
 
 })
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
 
@@ -51,6 +48,18 @@ app.post('/postthread',function(req,res,next){
   
                  
                  })
+
+})
+
+
+app.get('/all',function(res,req,next){
+
+
+threads.find({},function(err,data){
+
+
+res.json(data);
+})
 
 })
 
