@@ -4,7 +4,14 @@
 (function(){
   
   $.ajax({
-  method
+  type:'GET',
+    url:'/all',
+    datatype:'json',
+    success: function(data){
+    
+    console.log(data);
+    
+    }
   
   })
   

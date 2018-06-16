@@ -2,6 +2,7 @@ var mongoose=require('mongoose');
 
 var threadSchema=mongoose.Schema({
 
+  id:Number,
 content:{
 
 type:String,default:"new thread"
