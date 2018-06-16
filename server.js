@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 var mongoose=require('mongoose');
 var bp=require('body-parser');
-
+app.use(bp.json)
 
 mongoose.connect(process.env.SECRET,function(err){
 
@@ -30,7 +30,14 @@ app.get("/", function (request, response) {
 
 app.post('/postthread',function(req,res,next){
 
-  var content=
+  var content=req.body.content;
+  var password=req.body.password;
+  conso
+  if(content==undefined)
+  {
+  res.json({error:"No content specified"});
+  
+  }
 
 })
 
