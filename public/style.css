@@ -1,9 +1,21 @@
 /* styles */
 /* called by your view template */
 
+
+
+
 * {
   box-sizing: border-box;
 }
+
+
+#booker {
+  margin: 20px;
+  padding: 5px;
+  width: 60%;
+  border: 2px solid black;
+}
+
 
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
