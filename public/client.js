@@ -12,11 +12,15 @@
       data.forEach(function(ele)
                    {
         var str="";
+        var str1="";
+        var arr=[];
+        arr.push("<div id='repl'>")
         var k=0;      
       ele.replies.forEach(function(rep,ind){
       
       k=ind+1;
-        str="<p>"+ind+")"+rep.comment+"<p>"
+        str="<p>"+ind+")"+rep.comment+"<p>";
+        
       
       })
       
