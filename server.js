@@ -155,16 +155,23 @@ console.log(req.body);
 
 app.post('/delrep',function(req,res,next){
 
-  var tid=req.body.tid;
+  var tid=Number(req.body.tid);
   var rname=req.body.rname;
   var password1=req.body.password;
   
-  var k=0;
+  var k=-9;
   var obj={comment:rname,password:password1};
   threads.findOne({id:tid},function(err,docs){
   k=docs.replies.indexOf(obj);
     
-    if(k==-1){res}
+    if(k==-1){res.json({error:"wrong password"})}
+    
+    else{
+    docs.replies.splice(k);
+      docs.save(function(err){if(err){console.log(err)}
+                             else{res.redirect('/'+board)}
+                             })
+    }
   
   })
 console.log(req.body)
