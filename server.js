@@ -30,8 +30,9 @@ app.get("/:board", function (req, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.post('/:board/postthread',function(req,res,next){
+app.post('/postthread',function(req,res,next){
   var board=req.params.board;
+  console.log(board);
   var content=req.body.content;
   var password=req.body.password;
   console.log(req.body);
