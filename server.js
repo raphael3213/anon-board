@@ -48,7 +48,7 @@ app.post('/:board/postthread',function(req,res,next){
                  
                  if(err){console.log(err)}
   
-  res.redirect('/');
+  res.redirect('/'+board);
                  
                  })
 
