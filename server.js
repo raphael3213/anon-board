@@ -163,7 +163,7 @@ app.post('/delrep',function(req,res,next){
   var obj={comment:rname,password:password1};
   threads.findOne({id:tid},function(err,docs){
   k=docs.replies.indexOf(obj);
-    
+    console.log(k)
     if(k==-1){res.json({error:"wrong password"})}
     
     else{
