@@ -103,6 +103,10 @@ res.json(data);
 app.post('/addrep',function(req,res,next){
 
 console.log(req.body);
+  var reply=req.body.reply;
+  var tid=Number(req.body.tid);
+  var password1=req.body.reppassword;
+  var obj={comment:reply,password:password1};
 
 })
 var listener = app.listen(process.env.PORT, function () {
