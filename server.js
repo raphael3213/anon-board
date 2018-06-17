@@ -58,7 +58,30 @@ console.log(req.body)
   var tid=Number(req.body.tid);
   var password=req.body.thrpassword;
   
-  threads.findOne({})
+  threads.findOne({id:tid},function(err,docs){
+  
+  if(err){console.log(err)}
+    
+    if(docs.password==password){
+    
+    threads.deleteOne({id:tid},function(err){
+    
+      if(err){console.log(err)}
+    else{
+    
+    res.redirect('/');
+    }
+        
+    })
+    
+    }
+    
+    else{
+    
+    res.json({error:"wrong password"});
+    }
+  
+  })
 
 
 })
@@ -76,6 +99,8 @@ res.json(data);
 
 })
 
+
+app.post('/addrep')
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
