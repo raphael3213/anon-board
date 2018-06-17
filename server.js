@@ -2,6 +2,7 @@
 // where your node app starts
 
 // init project
+var schema=
 var threads=require('./models/thread')
 var express = require('express');
 var app = express();
@@ -23,12 +24,13 @@ app.use(express.static('public'));
 
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
+app.get("/:board", function (req, response) {
+  
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.post('/postthread',function(req,res,next){
-
+app.post('/:board/postthread',function(req,res,next){
+  var board=req.params.board;
   var content=req.body.content;
   var password=req.body.password;
   console.log(req.body);

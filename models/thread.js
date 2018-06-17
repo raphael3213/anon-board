@@ -13,4 +13,5 @@ type:String,default:"new thread"
 
 
 })
-module.exports=mongoose.model('thread',threadSchema);
+module.exports=threadSchema;
+  //mongoose.model('thread',threadSchema);
