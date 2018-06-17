@@ -27,7 +27,7 @@
         str="<p>"+k+")"+rep.comment+"<p>";
         strx="<input type='hidden' name='rname' value="+rep.comment+">";
         stry="<input type='submit' value='delete'>"
-var str1=str+"<form action='delrep' method='get'>"+"<input name='tid' type='hidden' value="+ele.id+">"+strx+"<label for='reppassword'>Password:</label>"+ "<input name='reppassword' type='text'>"+stry+"</form>";
+var str1=str+"<form action='delrep' method='post'>"+"<input name='tid' type='hidden' value="+ele.id+">"+strx+"<label for='reppassword'>Password:</label>"+ "<input name='reppassword' type='text'>"+stry+"</form>";
   console.log("what up")
         arr.push(str1);
       
