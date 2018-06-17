@@ -125,6 +125,13 @@ console.log(req.body);
   })
 
 })
+
+app.post('/delrep',function(req,res,next){
+
+console.log(req.body)
+
+})
+
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
