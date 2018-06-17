@@ -6,8 +6,10 @@ var schema=require('./models/thread')
 
 var express = require('express');
 var app = express();
+var board;
 var mongoose=require('mongoose');
-var threads=mongoose.model('thread',schema);
+var threads;
+    //mongoose.model('thread',schema);
 var bp=require('body-parser');
 app.use(bp.json());
 app.use(bp.urlencoded({extended:false}));
@@ -26,12 +28,16 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:board", function (req, response) {
+  
+  threads=mongoose.model(req.params.board,schema);
+  board=req.params.board;
   console.log(req.params)
+  console.log("hello again");
   response.sendFile(__dirname + '/views/index.html');
 });
 
 app.post('/postthread',function(req,res,next){
-  var board=req.params.board;
+  board=req.params.board;
   console.log(board);
   var content=req.body.content;
   var password=req.body.password;
@@ -92,7 +98,7 @@ console.log(req.body)
 
 
 
-app.get('/all',function(req,res,next){
+app.get('/'+board+'/all',function(req,res,next){
 
 
 threads.find({},function(err,data){

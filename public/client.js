@@ -5,7 +5,7 @@
   
   $.ajax({
   type:'GET',
-    url:'/all',
+    url:'joel/all',
     datatype:'json',
     success: function(data){
    var arrx=[];
