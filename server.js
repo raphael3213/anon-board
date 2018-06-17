@@ -52,6 +52,19 @@ app.post('/postthread',function(req,res,next){
 })
 
 
+app.post('/delthread',function(req,res,next){
+
+console.log(req.body)
+  var tid=Number(req.body.tid);
+  var password=req.body.thrpassword;
+  
+  threads.findOne({})
+
+
+})
+
+
+
 app.get('/all',function(req,res,next){
 
 
