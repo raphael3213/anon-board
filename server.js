@@ -51,6 +51,12 @@ res.json(data);
   response.sendFile(__dirname + '/views/index.html');
 });
 
+
+app.get('/',function(req,res,next){
+
+res.sendFile(__dirname + '/views/ind.html');
+
+})
 app.post('/postthread',function(req,res,next){
   
   console.log(board);
@@ -157,19 +163,23 @@ app.post('/delrep',function(req,res,next){
 
   var tid=Number(req.body.tid);
   var rname=req.body.rname;
-  var password1=req.body.password;
+  var password1=req.body.reppassword;
   
-  var k=-9;
+  var k=-1;
   var obj={"comment":rname,"password":password1};
+  console.log(obj);
   threads.findOne({id:tid},function(err,docs){
     if(err){console.log(err)}
     
     docs.replies.forEach(function(rep,ind){
+    //console.log(rep);
+    if(rep["comment"]==rname&&rep["password"]==password1){
     
-    if(rep["comment"]==rname&&rep["")
+    k=ind;
+    }
     
     })
-  k=docs.replies.indexOf(obj);
+  
     console.log(k)
     if(k==-1){res.json({error:"wrong password"})}
     
