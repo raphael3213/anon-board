@@ -157,7 +157,16 @@ app.post('/delrep',function(req,res,next){
 
   var tid=req.body.tid;
   var rname=req.body.rname;
-  var password=req.body.password;
+  var password1=req.body.password;
+  
+  var k=0;
+  var obj={comment:rname,password:password1};
+  threads.findOne({id:tid},function(err,docs){
+  k=docs.replies.indexOf(obj);
+    
+    if(k==-1){res}
+  
+  })
 console.log(req.body)
   
   
