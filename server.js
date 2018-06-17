@@ -107,6 +107,22 @@ console.log(req.body);
   var tid=Number(req.body.tid);
   var password1=req.body.reppassword;
   var obj={comment:reply,password:password1};
+  
+  threads.findOne({id:tid},function(err,docs){
+    
+  if(err){console.log(err)}
+    
+    docs.replies.push(obj);
+    docs.save(function(err){if(err){console.log(err)
+                                   
+                                   
+                                   }
+                           res.redirect('/');
+                           
+                           })
+    
+  
+  })
 
 })
 var listener = app.listen(process.env.PORT, function () {
