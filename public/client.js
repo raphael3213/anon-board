@@ -2,7 +2,8 @@
 // run by the browser each time your view template is loaded
 
 (function(){
-  
+  var x=document.URL;
+  console.log(x);
   $.ajax({
   type:'GET',
     url:'joel/all',

@@ -31,13 +31,28 @@ app.get("/:board", function (req, response) {
   
   threads=mongoose.model(req.params.board,schema);
   board=req.params.board;
-  console.log(req.params)
+  console.log(board+"muthafuka1");
   console.log("hello again");
+  
+  
+  app.get('/'+board+'/all',function(req,res,next){
+console.log(board+"muthafuka");
+threads.find({},function(err,data){
+res.json(data);
+})
+})
+
+  
+  
+  
+  
+  
+  
   response.sendFile(__dirname + '/views/index.html');
 });
 
 app.post('/postthread',function(req,res,next){
-  board=req.params.board;
+  
   console.log(board);
   var content=req.body.content;
   var password=req.body.password;
@@ -100,7 +115,7 @@ console.log(req.body)
 
 app.get('/'+board+'/all',function(req,res,next){
 
-
+console.log(board+"muthafuka2");
 threads.find({},function(err,data){
 
 
