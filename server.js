@@ -94,7 +94,7 @@ console.log(req.body)
       if(err){console.log(err)}
     else{
     
-    res.redirect('/');
+    res.redirect('/'+board);
     }
         
     })
@@ -142,7 +142,7 @@ console.log(req.body);
                                    
                                    
                                    }
-                           res.redirect('/');
+                           res.redirect('/'+board);
                            
                            })
     
@@ -154,6 +154,8 @@ console.log(req.body);
 app.post('/delrep',function(req,res,next){
 
 console.log(req.body)
+  
+  
 
 })
 
