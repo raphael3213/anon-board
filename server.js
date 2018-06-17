@@ -2,11 +2,12 @@
 // where your node app starts
 
 // init project
-var schema=
-var threads=require('./models/thread')
+var schema=require('./models/thread')
+
 var express = require('express');
 var app = express();
 var mongoose=require('mongoose');
+var threads=mongoose.model('thread',schema);
 var bp=require('body-parser');
 app.use(bp.json());
 app.use(bp.urlencoded({extended:false}));
@@ -25,7 +26,7 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:board", function (req, response) {
-  
+  console.log(req.params)
   response.sendFile(__dirname + '/views/index.html');
 });
 
